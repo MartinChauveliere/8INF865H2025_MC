@@ -27,4 +27,8 @@ jobs:
         uses: android-actions/setup-android@v3
 
       - name: Build project and run local and device tests
+<<<<<<< Updated upstream
         run: ./gradlew :app:assembleDebug
+=======
+        run: ./gradlew :app:assembleDebug
+>>>>>>> Stashed changes

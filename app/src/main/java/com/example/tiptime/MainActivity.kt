@@ -15,7 +15,10 @@
  */
 package com.example.tiptime
 
+<<<<<<< Updated upstream
 import android.annotation.SuppressLint
+=======
+>>>>>>> Stashed changes
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -29,25 +32,45 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.statusBarsPadding
+<<<<<<< Updated upstream
 import androidx.compose.foundation.text.KeyboardOptions
+=======
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
+>>>>>>> Stashed changes
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+<<<<<<< Updated upstream
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+=======
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardType
+>>>>>>> Stashed changes
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tiptime.ui.theme.TipTimeTheme
 import java.text.NumberFormat
+<<<<<<< Updated upstream
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.text.input.KeyboardType
+=======
+>>>>>>> Stashed changes
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,10 +94,18 @@ fun TipTimeLayout() {
 
     val amount = amountInput.toDoubleOrNull() ?: 0.0
     val tip = calculateTip(amount)
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     Column(
         modifier = Modifier
             .statusBarsPadding()
             .padding(horizontal = 40.dp)
+<<<<<<< Updated upstream
+=======
+            .verticalScroll(rememberScrollState())
+>>>>>>> Stashed changes
             .safeDrawingPadding(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
@@ -87,10 +118,15 @@ fun TipTimeLayout() {
         )
         EditNumberField(
             value = amountInput,
+<<<<<<< Updated upstream
             onValueChange = { amountInput = it },
             modifier = Modifier
                 .padding(bottom = 32.dp)
                 .fillMaxWidth()
+=======
+            onValueChanged = { amountInput = it },
+            modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth()
+>>>>>>> Stashed changes
         )
         Text(
             text = stringResource(R.string.tip_amount, tip),
@@ -100,6 +136,7 @@ fun TipTimeLayout() {
     }
 }
 
+<<<<<<< Updated upstream
 @SuppressLint("UnrememberedMutableState")
 @Composable
 fun EditNumberField(
@@ -113,13 +150,30 @@ fun EditNumberField(
         label = { Text(stringResource(R.string.bill_amount)) },
         modifier = Modifier.fillMaxWidth(),
         singleLine = true,
+=======
+@Composable
+fun EditNumberField(
+    value: String,
+    onValueChanged: (String) -> Unit,
+    modifier: Modifier
+) {
+    TextField(
+        value = value,
+        singleLine = true,
+        modifier = modifier,
+        onValueChange = onValueChanged,
+        label = { Text(stringResource(R.string.bill_amount)) },
+>>>>>>> Stashed changes
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
     )
 }
 
+<<<<<<< Updated upstream
 
 
 
+=======
+>>>>>>> Stashed changes
 /**
  * Calculates the tip based on the user input and format the tip amount
  * according to the local currency.
@@ -137,3 +191,7 @@ fun TipTimeLayoutPreview() {
         TipTimeLayout()
     }
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
